@@ -1,0 +1,4 @@
+/mnt/d/dev/design_patterns/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/d/dev/design_patterns/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/d/dev/design_patterns/cmake-build-debug/CMakeFiles/open_close.dir
+/mnt/d/dev/design_patterns/cmake-build-debug/CMakeFiles/design_patterns.dir
