@@ -1,0 +1,3 @@
+add_executable(open_close open_close.cpp)
+add_executable(interface_segregation interface_segregation.cpp)
+add_executable(dependency_inversion dependency_inversion.cpp ../construction_patterns/builder/no_builder.cpp)
