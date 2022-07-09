@@ -1,5 +1,5 @@
 /**
- * @file    code.h
+ * @file    CodeBuilder.h
  * @author  Samuel Martel
  * @p       https://github.com/smartel99
  * @date    2022-07-09
@@ -23,13 +23,31 @@
  *****************************************************************************/
 
 #ifndef DESIGN_PATTERNS_CODEBUILDER_H
-#    define DESIGN_PATTERNS_CODE_H
+#define DESIGN_PATTERNS_CODEBUILDER_H
 
 
-#    include "../tag.h"
+#include <sstream>
+#include <string>
+#include <vector>
+#include <ostream>
 
-struct Code : Tag
+class CodeBuilder
 {
-    Code(std::string text) : Tag("code", std::move(text)) {}
+    using Field = std::pair<std::string, std::string>;
+
+public:
+    CodeBuilder(std::string name);
+
+    CodeBuilder& add_field(const std::string& name, const std::string& type);
+
+
+    friend std::ostream& operator<<(std::ostream& os, const CodeBuilder& builder);
+
+private:
+    std::string        m_name;
+    std::vector<Field> m_fields;
 };
+
+
+
 #endif    // DESIGN_PATTERNS_CODEBUILDER_H

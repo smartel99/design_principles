@@ -1,5 +1,5 @@
 /**
- * @file    code.h
+ * @file    CodeBuilder.cpp
  * @author  Samuel Martel
  * @p       https://github.com/smartel99
  * @date    2022-07-09
@@ -22,14 +22,34 @@
  *   along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *****************************************************************************/
 
-#ifndef DESIGN_PATTERNS_CODEBUILDER_H
-#    define DESIGN_PATTERNS_CODE_H
+#include "CodeBuilder.h"
+#include <iomanip>
 
 
-#    include "../tag.h"
-
-struct Code : Tag
+CodeBuilder::CodeBuilder(std::string name) : m_name(std::move(name))
 {
-    Code(std::string text) : Tag("code", std::move(text)) {}
-};
-#endif    // DESIGN_PATTERNS_CODEBUILDER_H
+}
+
+CodeBuilder& CodeBuilder::add_field(const std::string& name, const std::string& type)
+{
+    m_fields.emplace_back(type, name);
+    return *this;
+}
+
+std::ostream& operator<<(std::ostream& os, const CodeBuilder& obj)
+{
+    static constexpr int indentation = 2;
+
+    os << "class " << obj.m_name << "\n"
+       << "{"
+       << "\n";
+
+    for (const auto& field: obj.m_fields)
+    {
+        os << std::setw(indentation) << field.first << " " << field.second << ";" << std::endl;
+    }
+
+    os << "};";
+
+    return os;
+}

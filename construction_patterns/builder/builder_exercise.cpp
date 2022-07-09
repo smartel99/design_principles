@@ -1,5 +1,5 @@
 /**
- * @file    code.h
+ * @file    builder_exercise.cpp
  * @author  Samuel Martel
  * @p       https://github.com/smartel99
  * @date    2022-07-09
@@ -22,14 +22,8 @@
  *   along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *****************************************************************************/
 
-#ifndef DESIGN_PATTERNS_CODEBUILDER_H
-#    define DESIGN_PATTERNS_CODE_H
 
-
-#    include "../tag.h"
-
-struct Code : Tag
+int main()
 {
-    Code(std::string text) : Tag("code", std::move(text)) {}
-};
-#endif    // DESIGN_PATTERNS_CODEBUILDER_H
+
+}
