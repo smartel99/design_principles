@@ -1,1 +1,3 @@
 add_executable(no_builder no_builder.cpp)
+add_executable(basic_builder basic_builder.cpp basic_builder/html_element.h basic_builder/html_builder.h basic_builder/html_builder.cpp basic_builder/html_element.cpp)
+add_executable(groovy_builder groovy_builder.cpp)
